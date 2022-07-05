@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AsyncTaskExample</string>
+    <string name="selecione_a_dura_o_da_soneca">Selecione a duração da soneca</string>
+    <string name="dormir_com_asynctask">Dormir com ASYNCTASK</string>
+    <string name="dormir_sem_asynctask">dormir sem asynctask</string>
+    <string name="o_retorno_da_a_o_ir_aparecer_aqui">O retorno da ação irá aparecer aqui</string>
+</resources>
