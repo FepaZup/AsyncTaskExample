@@ -28,17 +28,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnDormirSemAsyncTask.setOnClickListener {
-
-            binding.progressBar.visibility = View.VISIBLE
-            binding.tvRetorno.text = ""
-            val tempoTotal = binding.numberPicker.value.toLong()*1000
-
-            Toast.makeText(this, "Começou a dormir sem AsyncTask", Toast.LENGTH_SHORT).show()
-            Thread.sleep(tempoTotal )
-            Toast.makeText(this, "Acabou de dormir sem AsyncTask", Toast.LENGTH_SHORT).show()
-            binding.tvRetorno.text =
-                "Android dormiu por ${binding.numberPicker.value} segundos sem AsyncTask"
-            binding.progressBar.visibility = View.GONE
+            semAsyncBtnListener()
         }
+    }
+
+    private fun semAsyncBtnListener(){
+
+        binding.progressBar.visibility = View.VISIBLE
+        binding.tvRetorno.text = ""
+        val tempoTotal = binding.numberPicker.value.toLong()*1000
+
+        Toast.makeText(this, "Começou a dormir sem AsyncTask", Toast.LENGTH_SHORT).show()
+        Thread.sleep(tempoTotal )
+        Toast.makeText(this, "Acabou de dormir sem AsyncTask", Toast.LENGTH_SHORT).show()
+        binding.tvRetorno.text =
+            "Android dormiu por ${binding.numberPicker.value} segundos sem AsyncTask"
+        binding.progressBar.visibility = View.GONE
     }
 }
