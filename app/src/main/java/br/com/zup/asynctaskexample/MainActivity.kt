@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.zup.asynctaskexample.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +22,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.numberPicker.minValue = 5
         binding.numberPicker.maxValue = 20
+        binding.numberPicker.setOnValueChangedListener { picker, oldVal, newVal ->
+            Snackbar.make(binding.root, "Duração da soneca setada para ${newVal}", Snackbar.LENGTH_SHORT).show()
+        }
 
         binding.btnDormirAsync.setOnClickListener {
             val task = AsyncTaskExample(this)
@@ -30,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnDormirSemAsyncTask.setOnClickListener {
             semAsyncBtnListener()
         }
+
     }
 
     private fun semAsyncBtnListener(){
